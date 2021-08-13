@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link href="../static/node_modules/bootstrap/dist/css/bootstrap.css"
+          th:href="@{/node_modules/bootstrap/dist/css/bootstrap.css}" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <form method="post" th:action="@{/login}">
+        <!--  登录界面  -->
+        <div class="row" style="margin-top: 200px">
+            <p class="m-auto col-auto" style="font-size: 30px; font-weight: bold">登录界面</p>
+        </div>
+        <div class="row mt-4">
+            <label class="m-auto col-4">
+                <input type="text" class="form-control" placeholder="请输入用户名" name="username">
+            </label>
+        </div>
+        <div class="row mt-4">
+            <label class="m-auto col-4">
+                <input type="password" class="form-control" placeholder="请输入密码" name="password">
+            </label>
+        </div>
+        <div class="row mt-4">
+            <div class="m-auto col-4" th:if="${#fields.hasErrors('*')}">
+                <p class="alert alert-danger">用户名或密码有误</p>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <label class="m-auto col-4">
+                <input type="submit" class="btn btn-primary w-100" value="登录">
+            </label>
+        </div>
+    </form>
+    <div class="row mt-3">
+        <div class="m-auto col-4">
+            <a th:href="@{/registry}" class="btn btn-primary w-100">注册</a>
+        </div>
+    </div>
+</div>
+<script src="../static/node_modules/bootstrap/dist/js/bootstrap.js"
+        th:src="@{/node_modules/bootstrap/dist/js/bootstrap.js}" type="application/javascript"></script>
+</body>
+</html>
