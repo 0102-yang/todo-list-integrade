@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <title>index</title>
     <link href="../static/node_modules/bootstrap/dist/css/bootstrap.css"
-          th:href="@{/node_modules/bootstrap/dist/css/bootstrap.css}" rel="stylesheet">
+        th:href="@{/node_modules/bootstrap/dist/css/bootstrap.css}" rel="stylesheet">
     <style>
         .bold-font {
             font-size: 30px;
@@ -12,44 +13,40 @@
         }
     </style>
 </head>
+
 <body>
-<div class="container">
-    <!--Header-->
-    <div class="row" style="margin-top: 200px">
-        <p class="col-4 bold-font" th:text="${username}">Username</p>
-    </div>
-    <div class="row mt-4">
-        <p class="col-4" th:text="${email}">Email</p>
-    </div>
+    <div class="container">
+        <!--Header-->
+        <div class="row" style="margin-top: 200px">
+            <p class="col-4 bold-font">Yang</p>
+        </div>
+        <div class="row mt-4">
+            <p class="col-4">1657375983@qq.com</p>
+        </div>
+        <form method="POST" th:action="@{/logout}">
+            <input type="submit" class="col-2 btn btn-danger" value="注销">
+        </form>
 
-    <hr>
+        <hr>
 
-    <!--待办事项-->
-    <div class="row">
-        <p class="m-auto col-auto bold-font">待办事项</p>
-    </div>
-    <div class="mt-5" th:each="com:${completedRemindList}">
-        <div class="row col-8 m-auto">
-            <div class="col">
-                <span th:text="${com.description}">事项标题</span>
-            </div>
-            <div class="col">
-                <span th:text="${com.remindTime}">提醒时间</span>
-            </div>
-            <div class="col-auto">
-                <button th:href="@{/remind-list/complete/{id}(id=${com.remindId})}" class="btn btn-info"
-                >完成
-                </button>
-            </div>
-            <div class="col-auto">
-                <button th:href="@{/remind-list/delete/{id}(id=${com.remindId})}" class="btn btn-danger"
-                >删除
-                </button>
+        <!--待办事项-->
+        <div class="row">
+            <p class="m-auto col-auto bold-font">待办事项</p>
+        </div>
+        <a th:href="@{/add}" class="btn btn-info col-2 m-auto">添加</a>
+        <div class="mt-5" th:each="com:${completedRemindList}">
+            <div class="row col-8 m-auto">
+                <div class="col">
+                    <span th:text="${com.description}">事项标题</span>
+                </div>
+                <div class="col">
+                    <span th:text="${com.remindTime}">提醒时间</span>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<script src="../static/node_modules/bootstrap/dist/js/bootstrap.js"
+    <script src="../static/node_modules/bootstrap/dist/js/bootstrap.js"
         th:src="@{/node_modules/bootstrap/dist/js/bootstrap.js}" type="application/javascript"></script>
 </body>
+
 </html>
