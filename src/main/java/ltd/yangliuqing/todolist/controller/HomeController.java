@@ -13,6 +13,9 @@ import org.springframework.web.servlet.ModelAndView;
 import ltd.yangliuqing.todolist.model.vo.Remind;
 import ltd.yangliuqing.todolist.repository.RemindRepository;
 
+/**
+ * @author yang
+ */
 @Controller
 @RequestMapping("/")
 public class HomeController {

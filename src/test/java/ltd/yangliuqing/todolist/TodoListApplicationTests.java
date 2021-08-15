@@ -9,12 +9,12 @@ import ltd.yangliuqing.todolist.service.EmailSenderService;
 
 @SpringBootTest
 class TodoListApplicationTests {
-    // @Autowired
-    // private EmailSenderService emailSenderService;
+    @Autowired
+    private EmailSenderService emailSenderService;
 
     @Test
     void contextLoads() {
-        // emailSenderService.sendTextEmail("test");
+        emailSenderService.sendTextEmail("test");
     }
 
 }

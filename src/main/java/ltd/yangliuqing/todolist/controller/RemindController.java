@@ -13,6 +13,9 @@ import ltd.yangliuqing.todolist.model.entity.RemindEntity;
 import ltd.yangliuqing.todolist.model.vo.Remind;
 import ltd.yangliuqing.todolist.repository.RemindRepository;
 
+/**
+ * @author yang
+ */
 @Controller
 @RequestMapping("/remind")
 public class RemindController {
