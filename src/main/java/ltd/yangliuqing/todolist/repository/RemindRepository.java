@@ -23,7 +23,7 @@ public interface RemindRepository
          * @param completeFlag 事件是否被提醒过
          * @return 所有任务
          */
-        List<RemindEntity> findAllByRemindTimeBeforeAndCompleteFlag(LocalDateTime remindTime, Boolean completeFlag);
+        List<RemindEntity> findAllByRemindTimeBeforeAndCompleteFlag(LocalDateTime remindTime, boolean completeFlag);
 
         /**
          * 通过事件的id更新已经提醒的标志
@@ -34,5 +34,5 @@ public interface RemindRepository
         @Modifying
         @Transactional
         @Query(value = "update remind set complete_flag = ?1 where remind_id = ?2", nativeQuery = true)
-        void updateCompleteFlagByRemindId(Boolean completeFlag, Integer remindId);
+        void updateCompleteFlagByRemindId(boolean completeFlag, Integer remindId);
 }

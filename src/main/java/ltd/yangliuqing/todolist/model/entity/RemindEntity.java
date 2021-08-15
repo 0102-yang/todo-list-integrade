@@ -30,5 +30,5 @@ public class RemindEntity implements Serializable {
     private LocalDateTime remindTime;
 
     @Column(name = "complete_flag")
-    private Boolean completeFlag = Boolean.FALSE;
+    private boolean completeFlag = false;
 }
