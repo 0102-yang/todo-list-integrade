@@ -26,7 +26,7 @@ public class ScheduledTaskService {
     @Scheduled(cron = "1 0/1 * * * *")
     public void scheduleTask() {
         LocalDateTime now = LocalDateTime.now();
-        var list = this.remindRepository.findAllByRemindTimeBeforeAndCompleteFlag(now, Boolean.FALSE);
+        var list = this.remindRepository.findAllByRemindTimeBeforeAndCompleteFlag(now, false);
         list.forEach(this::wrapEmailAndSendEmail);
     }
 

@@ -30,7 +30,7 @@ public class HomeController {
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
 
         for (var e : list) {
-            if (e.getCompleteFlag()) {
+            if (e.isCompleteFlag()) {
                 continue;
             }
             String datetime = dateTimeFormatter.format(e.getRemindTime());
